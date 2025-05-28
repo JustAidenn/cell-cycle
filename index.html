@@ -14,13 +14,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         .container {
             position: relative;
-            width: 600px;
-            height: 600px;
-            background-image: url('cell_cycle.png'); /* Direct reference to the image */
+            width: 90vw; /* Scale with viewport */
+            max-width: 600px; /* Max size */
+            aspect-ratio: 1/1; /* Maintain square shape */
+            background-image: url('cell_cycle.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -31,7 +33,7 @@
             position: absolute;
             cursor: pointer;
             transition: all 0.3s ease;
-            border-radius: 8px;
+            border-radius: 50%;
             z-index: 2;
         }
 
@@ -54,18 +56,21 @@
             transition: opacity 0.3s ease;
             z-index: 20;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: translate(-50%, -100%);
+            top: -10px;
+            left: 50%;
         }
 
         .phase:hover .tooltip {
             opacity: 1;
         }
 
-                /* G0 Phase - Top left */
-         .g0-phase {
-            top: 35px;
-            left: 50px;
-            width: 80px;
-            height: 80px;
+        /* G0 Phase - Top left */
+        .g0-phase {
+            top: 5.83%; /* 35px/600px */
+            left: 8.33%; /* 50px/600px */
+            width: 13.33%; /* 80px/600px */
+            height: 13.33%;
             background: transparent;
             border: none;
             border-radius: 50%;
@@ -73,10 +78,10 @@
 
         /* G1 Phase - Top right section */
         .g1-phase {
-            top: 100px;
-            right: 260px;
-            width: 80px;
-            height: 80px;
+            top: 16.67%; /* 100px/600px */
+            right: 43.33%; /* 260px/600px */
+            width: 13.33%;
+            height: 13.33%;
             background: transparent;
             border: none;
             border-radius: 50%;
@@ -84,38 +89,40 @@
 
         /* S Phase - Right section */
         .s-phase {
-            top: 330px;
-            right: 100px;
-            width: 80px;
-            height: 80px;
+            top: 55%; /* 330px/600px */
+            right: 16.67%; /* 100px/600px */
+            width: 13.33%;
+            height: 13.33%;
             background: transparent;
             border: none;
             border-radius: 50%;
         }
 
-        /* G2 Phase - Bottom section */
+        /* G2 Phase */
         .g2-phase {
-            bottom: 80px;
-            left: 220px;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            bottom: 13.33%; /* 80px/600px */
+            left: 36.67%; /* 220px/600px */
+            width: 13.33%;
+            height: 13.33%;
             background: transparent;
             border: none;
+            border-radius: 50%;
         }
 
-        /* M Phase - Left section */
+        /* M Phase */
         .m-phase {
-            top: 280px;
-            left: 160px;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            top: 46.67%; /* 280px/600px */
+            left: 26.67%; /* 160px/600px */
+            width: 13.33%;
+            height: 13.33%;
             background: transparent;
             border: none;
+            border-radius: 50%;
         }
 
-
+        .g0-phase .tooltip {
+            max-width: 300px;
+        }
 
         .g0-phase .phase-label {
             display: none;
@@ -123,13 +130,18 @@
 
         /* Interphase - Center */
         .interphase {
-            top: 250px;
-            left: 250px;
-            width: 100px;
-            height: 100px;
+            top: 41.67%; /* 250px/600px */
+            left: 41.67%; /* 250px/600px */
+            width: 16.67%; /* 100px/600px */
+            height: 16.67%;
             background: transparent;
             border: none;
             border-radius: 50%;
+        }
+
+        /* Show Interphase label */
+        .interphase .phase-label {
+            display: block;
         }
 
         .title {
@@ -159,6 +171,69 @@
             transform: translate(-50%, -50%);
             pointer-events: none;
             display: none;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                width: 80vw;
+            }
+
+            .title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .instructions {
+                font-size: 14px;
+                margin-top: 15px;
+            }
+
+            .tooltip {
+                max-width: 200px;
+                font-size: 12px;
+                padding: 8px 12px;
+                transform: translate(-50%, 100%); /* Move below phase */
+                top: calc(100% + 10px); /* Position below */
+            }
+
+            .g0-phase .tooltip {
+                max-width: 220px;
+            }
+
+            .phase-label {
+                font-size: 14px;
+            }
+
+            .interphase .phase-label {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                width: 75vw;
+            }
+
+            .title {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .instructions {
+                font-size: 12px;
+                margin-top: 10px;
+            }
+
+            .tooltip {
+                max-width: 150px;
+                font-size: 10px;
+                padding: 6px 8px;
+            }
+
+            .g0-phase .tooltip {
+                max-width: 170px;
+            }
         }
     </style>
 </head>
@@ -222,7 +297,7 @@
             </div>
         </div>
 
-        <p class="instructions">Hover over each colored section to learn about that phase of the cell cycle!</p>
+        <p class="instructions">Hover or click each phase to learn about that stage of the cell cycle!</p>
     </div>
 
     <script>
