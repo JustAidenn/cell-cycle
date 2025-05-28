@@ -1,8 +1,8 @@
 # Interactive Cell Cycle
 
 ![Interactive Cell Cycle](https://img.shields.io/badge/HTML5-CSS3-blue?logo=html5)
-![GitHub](https://img.shields.io/github/license/<your-username>/<your-repo>?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/<your-username>/<your-repo>?style=flat-square)
+![GitHub](https://img.shields.io/github/license/JustAidenn/cell-cycle?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/JustAidenn/cell-cycle?style=flat-square)
 
 An interactive web-based visualization of the cell cycle, showcasing its phases (G0, G1, S, G2, M, and Interphase) with tooltips providing detailed descriptions. Built with HTML, CSS, and JavaScript, this project uses a background image (`cell_cycle.png`) to guide users, with transparent, circular phase areas that reveal information on hover or click.
 
