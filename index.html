@@ -60,54 +60,65 @@
             opacity: 1;
         }
 
+                /* G0 Phase - Top left */
+         .g0-phase {
+            top: 35px;
+            left: 50px;
+            width: 80px;
+            height: 80px;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+        }
+
         /* G1 Phase - Top right section */
         .g1-phase {
-            top: 50px;
-            right: 80px;
-            width: 200px;
-            height: 150px;
-            background: rgba(200, 180, 220, 0.7);
-            border: 3px solid #9370db;
+            top: 100px;
+            right: 260px;
+            width: 80px;
+            height: 80px;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
         }
 
         /* S Phase - Right section */
         .s-phase {
-            top: 200px;
-            right: 40px;
-            width: 150px;
-            height: 200px;
-            background: rgba(144, 238, 144, 0.7);
-            border: 3px solid #32cd32;
+            top: 330px;
+            right: 100px;
+            width: 80px;
+            height: 80px;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
         }
 
         /* G2 Phase - Bottom section */
         .g2-phase {
-            bottom: 40px;
-            left: 150px;
-            width: 300px;
-            height: 100px;
-            background: rgba(255, 182, 193, 0.7);
-            border: 3px solid #ff69b4;
+            bottom: 80px;
+            left: 220px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
         }
 
         /* M Phase - Left section */
         .m-phase {
-            top: 150px;
-            left: 40px;
-            width: 180px;
-            height: 250px;
-            background: rgba(255, 215, 0, 0.7);
-            border: 3px solid #ffa500;
+            top: 280px;
+            left: 160px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
         }
 
-        /* G0 Phase - Top left */
-        .g0-phase {
-            top: 60px;
-            left: 100px;
-            width: 120px;
-            height: 80px;
-            background: rgba(221, 160, 221, 0.7);
-            border: 3px solid #da70d6;
+
+
+        .g0-phase .phase-label {
+            display: none;
         }
 
         /* Interphase - Center */
@@ -116,8 +127,8 @@
             left: 250px;
             width: 100px;
             height: 100px;
-            background: rgba(173, 216, 230, 0.7);
-            border: 3px solid #4682b4;
+            background: transparent;
+            border: none;
             border-radius: 50%;
         }
 
@@ -147,6 +158,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
+            display: none;
         }
     </style>
 </head>
